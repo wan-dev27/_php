@@ -1,20 +1,20 @@
 <?php 
 if (isset($_POST['submit'])){
-    $angka1 = $_POST['angka1'];
-    $angka2 = $_POST['angka2'];
+    $numb1 = $_POST['numb1'];
+    $numb2 = $_POST['numb2'];
     $operasi = $_POST['operasi'];
     switch ($operasi) {
         case 'add':
-            $angka3 = $angka1+$angka2;
+            $result = $numb1+$numb2;
             break;
         case 'sub':
-			$angka3 = $angka1-$angka2;
+			$result = $numb1-$numb2;
 		    break;
 		case 'multi':
-			$angka3 = $angka1*$angka2;
+			$result = $numb1*$numb2;
 		    break;
 		case 'divide':
-			$angka3 = $angka1/$angka2;
+			$result = $numb1/$numb2;
 			break;    
     }
 }
@@ -96,8 +96,8 @@ if (isset($_POST['submit'])){
     
         <form action="" method="post">
 
-                    <input class="numb" type="text" name="angka1" id="angka1" placeholder="Number 1" autocomplete="off">
-                    <input class="numb" type="text" name="angka2" id="angka2" placeholder="Number 2" autocomplete="off">
+                    <input class="numb" type="text" name="numb1" id="numb1" placeholder="Number 1" autocomplete="off">
+                    <input class="numb" type="text" name="numb2" id="numb2" placeholder="Number 2" autocomplete="off">
                 
                     <select class="opt" name="operasi" id="opt">
                         <option value="add">+</option>
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])){
                     <button class="click" type="submit" name="submit">Result</button>
                 
                 <?php if(isset($_POST['submit'])): ?>
-                    <input class="numb" type="text" value="<?php echo $angka3; ?>">
+                    <input class="numb" type="text" value="<?php echo $result; ?>">
                 <?php else: ?>
                     <input class="numb" type="text" value="0">
                 <?php endif; ?>
